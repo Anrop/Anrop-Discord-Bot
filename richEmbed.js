@@ -6,6 +6,8 @@ const DESCRIPTION_LENGTH_LIMIT = 100
 const DESCRIPTION_ELLIPSIZE = '...'
 
 const formatDescription = (description) => {
+  description = description.replace(/(\r\n|\n|\r)/gm, ' ')
+
   if (description.length <= DESCRIPTION_LENGTH_LIMIT + DESCRIPTION_ELLIPSIZE.length) {
     return description
   }
