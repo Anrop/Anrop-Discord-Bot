@@ -1,0 +1,19 @@
+{
+  "name": "anrop-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for Anrop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Björn Dahlgren",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.0.0",
+    "filesize": "^4.1.2",
+    "moment": "^2.24.0",
+    "steam-workshop": "0.0.2"
+  }
+}
