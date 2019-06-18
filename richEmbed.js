@@ -2,12 +2,15 @@ const Discord = require('discord.js')
 const filesize = require('filesize')
 const moment = require('moment')
 
+const DESCRIPTION_LENGTH_LIMIT = 100
+const DESCRIPTION_ELLIPSIZE = '...'
+
 const formatDescription = (description) => {
-  if (description.length <= 500) {
+  if (description.length <= DESCRIPTION_LENGTH_LIMIT + DESCRIPTION_ELLIPSIZE.length) {
     return description
   }
 
-  return description.substring(0, 500) + '...'
+  return description.substring(0, DESCRIPTION_LENGTH_LIMIT) + DESCRIPTION_ELLIPSIZE
 }
 
 const formatTimestamp = (timestamp) => {
