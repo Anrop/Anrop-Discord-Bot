@@ -2,6 +2,14 @@ const Discord = require('discord.js')
 const filesize = require('filesize')
 const moment = require('moment')
 
+const formatDescription = (description) => {
+  if (description.length <= 500) {
+    return description
+  }
+
+  return description.substring(0, 500) + '...'
+}
+
 const formatTimestamp = (timestamp) => {
   return moment(timestamp * 1000).format('YYYY-MM-DD')
 }
@@ -27,7 +35,7 @@ exports.workshopItem = (item) => {
     .setTitle(title)
     .setURL(url)
     .setThumbnail(thumbnail)
-    .setDescription(description)
+    .setDescription(formatDescription(description))
     .addField('Size', formattedSize, true)
     .addField('Subscriptions', subscriptions, true)
     .addField('Favorited', favorited, true)
