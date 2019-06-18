@@ -14,7 +14,7 @@ exports.parseSteamUrls = function (text) {
 
 exports.parseSteamId = function (text) {
   const url = Url.parse(text, true)
-  
+
   if (url.query.id) {
     return parseInt(url.query.id)
   }

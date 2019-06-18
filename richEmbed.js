@@ -21,12 +21,13 @@ exports.workshopItem = (item) => {
   } = item
 
   const url = `https://steamcommunity.com/sharedfiles/filedetails/${id}`
-  const formattedSize = filesize(size);
+  const formattedSize = filesize(size)
 
   return new Discord.RichEmbed()
     .setTitle(title)
     .setURL(url)
     .setThumbnail(thumbnail)
+    .setDescription(description)
     .addField('Size', formattedSize, true)
     .addField('Subscriptions', subscriptions, true)
     .addField('Favorited', favorited, true)
