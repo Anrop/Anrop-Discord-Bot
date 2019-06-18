@@ -23,11 +23,7 @@ exports.workshopItem = (item) => {
     description,
     preview_url: thumbnail,
     publishedfileid: id,
-    subscriptions,
-    favorited,
-    views,
     file_size: size,
-    time_created: created,
     time_updated: updated
   } = item
 
@@ -40,9 +36,5 @@ exports.workshopItem = (item) => {
     .setThumbnail(thumbnail)
     .setDescription(formatDescription(description))
     .addField('Size', formattedSize, true)
-    .addField('Subscriptions', subscriptions, true)
-    .addField('Favorited', favorited, true)
-    .addField('Views', views, true)
-    .addField('Initial Upload', formatTimestamp(created), true)
     .addField('Last Updated', formatTimestamp(updated), true)
 }
