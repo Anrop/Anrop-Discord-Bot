@@ -18,6 +18,6 @@
     "steam-workshop": "0.0.2"
   },
   "devDependencies": {
-    "standard": "^12.0.1"
+    "standard": "^13.1.0"
   }
 }

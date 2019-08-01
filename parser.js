@@ -1,5 +1,3 @@
-const Url = require('url')
-
 const steamWorkshopUrlMatch = /https?:\/\/steamcommunity.com\/sharedfiles\/filedetails\/?\d*\/?\??[^\s]*/ig
 
 exports.parseSteamUrls = function (text) {
@@ -13,10 +11,11 @@ exports.parseSteamUrls = function (text) {
 }
 
 exports.parseSteamId = function (text) {
-  const url = Url.parse(text, true)
+  const url = new URL(text)
 
-  if (url.query.id) {
-    return parseInt(url.query.id)
+  const queryId = url.searchParams.get('id')
+  if (queryId) {
+    return queryId
   }
 
   const idInPath = url.pathname.match(/\d+/g)
