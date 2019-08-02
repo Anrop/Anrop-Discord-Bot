@@ -1,7 +1,13 @@
 language: node_js
+
 node_js:
   - "10"
   - "8"
+
+services:
+  - docker
+
 script:
   - npm test
   - npm run lint
+  - docker build -t anrop-discord-bot .
