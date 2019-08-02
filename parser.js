@@ -11,16 +11,20 @@ exports.parseSteamUrls = function (text) {
 }
 
 exports.parseSteamId = function (text) {
-  const url = new URL(text)
+  try {
+    const url = new URL(text)
 
-  const queryId = url.searchParams.get('id')
-  if (queryId) {
-    return queryId
-  }
+    const queryId = url.searchParams.get('id')
+    if (queryId) {
+      return parseInt(queryId, 10)
+    }
 
-  const idInPath = url.pathname.match(/\d+/g)
-  if (idInPath && idInPath[0]) {
-    return parseInt(idInPath[0], 10)
+    const idInPath = url.pathname.match(/\d+/g)
+    if (idInPath && idInPath[0]) {
+      return parseInt(idInPath[0], 10)
+    }
+  } catch (err) {
+    console.log(`Tried to parse steam id from non url text: ${text}`)
   }
 
   return undefined
