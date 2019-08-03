@@ -1,4 +1,4 @@
-const steamWorkshopUrlMatch = /https?:\/\/steamcommunity.com\/sharedfiles\/filedetails\/?\d*\/?\??[^\s]*/ig
+const steamWorkshopUrlMatch = /https?:\/\/steamcommunity.com\/(sharedfiles|workshop)\/filedetails\/?\d*\/?\??[^\s]*/ig
 
 exports.parseSteamUrls = function (text) {
   const matches = text.match(steamWorkshopUrlMatch)
