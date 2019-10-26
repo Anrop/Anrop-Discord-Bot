@@ -19,9 +19,12 @@
   },
   "devDependencies": {
     "jest": "^24.8.0",
+    "nock": "^11.6.0",
     "standard": "^13.1.0"
   },
   "standard": {
-    "env": [ "jest" ]
+    "env": [
+      "jest"
+    ]
   }
 }
