@@ -18,7 +18,7 @@
     "steam-workshop": "0.0.2"
   },
   "devDependencies": {
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "nock": "^11.6.0",
     "standard": "^14.3.1"
   },
